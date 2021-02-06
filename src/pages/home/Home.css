@@ -1,0 +1,80 @@
+.page.home {
+    background-image: var(--background-image);
+    background-size: cover;
+    background-position: bottom center;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+.home-banner {
+    max-width: 600px;
+    width: 100%;
+
+    text-align: center;
+
+    position: relative;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--color-white);
+    text-shadow: 3px 3px rgba(20, 20, 20, 0.75);
+
+    animation-name: fade-in;
+    animation-duration: .5s;
+}
+
+.home-banner .title {
+    font-size: 60px;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.home-banner .subtitle {
+    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.home-navigation {
+    max-width: 600px;
+    width: 100%;
+
+    text-align: center;
+
+    position: relative;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: .25s ease-in-out;
+}
+
+.home-navigation.active {
+    top: 50%;
+    transition: .25s ease-in-out;
+}
+
+.home-navigation span {
+    margin: 0 8px;
+}
+
+.home-navigation span i {
+    font-size: 20px;
+
+    border: 2px solid var(--color-white);
+    padding: 10px;
+    border-radius: 50%;
+
+    color: var(--color-white);
+
+    transition: .2s ease-in-out;
+    cursor: pointer;
+}
+
+.home-navigation span i:hover {
+    color: var(--color-black);
+    background: var(--color-white);
+
+    transition: .2s ease-in-out;
+}

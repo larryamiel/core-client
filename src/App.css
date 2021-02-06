@@ -1,38 +1,31 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+
+html {
+  --background-image: url('http://localhost:3000/background.jpg');
+  --color-red: #ed1c24;
+  --color-black: #45405e;
+  --color-gray: #a2a2a2;
+  --color-white: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Righteous', cursive;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fade-from-left {
+  from {opacity: 0; margin-left: -200px;}
+  to {opacity: 1; margin-left: 0;}
 }
