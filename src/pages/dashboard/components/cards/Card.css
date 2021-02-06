@@ -40,6 +40,15 @@
 }
 
 @media (min-width: 1440px) {
+    .card.large-two-third {
+        width: calc(66% - 10px);
+    }
+
+    .card.large-one-third-last {
+        width: calc(33% - 15px);
+        margin-right: 0;
+    }
+
     .card {
         width: calc(33% - 20px);
         display: inline-block;
@@ -48,7 +57,7 @@
         margin-right: 30px;
     }
 
-    .card:nth-child(3n) {
+    .card:nth-child(5n) {
         margin-right: 0;
     }
 }

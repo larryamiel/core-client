@@ -170,6 +170,47 @@ class Chart {
             options: this.charts.lines.options
         }
     }
+
+    daily_sales = async () => {
+        this.charts.lines.options.scales.yAxes[0].ticks.suggestedMax = 10;
+
+        let data = await axios.post('http://localhost:5000/user/data');
+        data = data.data;
+
+        return {
+            data: (canvas) => {
+                let ctx = canvas.getContext("2d");
+            
+                let gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+            
+                gradientStroke.addColorStop(1, "#ffc4c81f");
+                gradientStroke.addColorStop(0.4, "#ffc4c800");
+                gradientStroke.addColorStop(0, "#ffc4c800"); //blue colors
+            
+                return {
+                    labels: ["MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"],
+                    datasets: [{
+                            label: "Data",
+                            fill: true,
+                            backgroundColor: gradientStroke,
+                            borderColor: "#fffef9",
+                            borderWidth: 2,
+                            borderDash: [],
+                            borderDashOffset: 0.0,
+                            pointBackgroundColor: "#ffc4c8",
+                            pointBorderColor: "rgba(255,255,255,0)",
+                            pointHoverBackgroundColor: "#ffc4c8",
+                            pointBorderWidth: 20,
+                            pointHoverRadius: 4,
+                            pointHoverBorderWidth: 15,
+                            pointRadius: 4,
+                            data: data.sales.daily,
+                        }],
+                };
+            },
+            options: this.charts.lines.options
+        }
+    }
 }
 
 export default new Chart();

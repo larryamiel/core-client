@@ -3,7 +3,7 @@ import React from 'react';
 
 function Card(props) {
     return (
-        <div className="card">
+        <div className={'card ' + props.className}>
             <h4 className="card-subtitle">
                 {props.subtitleIcon ? <i className={props.subtitleIcon} /> : null}
                 {props.subtitle}

@@ -12,6 +12,7 @@ function Dashboard(props) {
   const [visitors, setVisitors] = useState('...');
   const [pageVisits, setPageVisits] = useState({});
   const [sales, setSales] = useState({});
+  const [dailySales, setDailySales] = useState({});
 
   useEffect(() => {
     setInterval(() => {
@@ -29,12 +30,16 @@ function Dashboard(props) {
     Chart.sales().then(chart => {
       setSales(chart);
     });
+
+    Chart.daily_sales().then(chart => {
+      setDailySales(chart);
+    });
   }, []);
 
     return (
         <div className="dashboard-container">
-            <Card title="Visitors" subtitle={visitors + ' Live'} subtitleIcon="fas fa-eye"></Card>
-            <Card title="$163.10" subtitle="Daily Sales" subtitleIcon="fas fa-eye"></Card>
+            <Card className="large-two-third" title="Visitors" subtitle={visitors + ' Live'} subtitleIcon="fas fa-eye"></Card>
+            <Card className="large-one-third-last" title="$163.10" subtitle="Daily Income" subtitleIcon="fas fa-eye"></Card>
 
             <Card title="Page Visits" subtitle="Daily">
                 <Bar
@@ -47,6 +52,13 @@ function Dashboard(props) {
                 <Line
                     data={sales ? sales.data : null}
                     options={sales ? sales.options : null}
+                />
+            </Card>
+
+            <Card title="Sales" subtitle="Daily">
+                <Line
+                    data={dailySales ? dailySales.data : null}
+                    options={dailySales ? dailySales.options : null}
                 />
             </Card>
         </div>
