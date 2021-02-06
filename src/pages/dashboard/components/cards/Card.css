@@ -1,0 +1,54 @@
+.card {
+    padding: 30px;
+    background-color: #ffffff1a;
+    box-shadow: 0 8px #0000001a;
+
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.card h2.card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 40px;
+    color: var(--color-light);
+}
+
+.card h4.card-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    color: var(--color-pink);
+}
+
+.card h4.card-subtitle i {
+    margin-right: 8px;
+}
+
+@media (min-width: 1280px) and (max-width: 1440px) {
+    .card {
+        width: calc(50% - 15px);
+        display: inline-block;
+        vertical-align: top;
+
+        margin-right: 30px;
+    }
+
+    .card:nth-child(2n) {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    .card {
+        width: calc(33% - 20px);
+        display: inline-block;
+        vertical-align: top;
+
+        margin-right: 30px;
+    }
+
+    .card:nth-child(3n) {
+        margin-right: 0;
+    }
+}

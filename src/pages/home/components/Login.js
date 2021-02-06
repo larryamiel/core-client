@@ -27,10 +27,12 @@ function Login(props) {
         .then(response => {
             setLoading(false);
 
-            console.log(response);
-
             if (response.data.status === 'error') {
                 setAlerts(response.data.error);
+            }
+            else {
+                props.changeState('home');
+                props.updateUser();
             }
         }).catch(err => console.log(err));
     }

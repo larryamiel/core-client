@@ -1,5 +1,5 @@
 .register-container {
-    max-width: 350px;
+    max-width: 400px;
     width: 100%;
 
     padding: 14px 20px;
@@ -12,7 +12,8 @@
     animation-name: fade-from-left;
     animation-duration: .5s;
 
-    background-color: rgba(255, 255, 255, .65);
+    border-radius: 8px;
+    background-color: var(--color-black);
 
     text-align: center;
 }
@@ -38,12 +39,12 @@
     bottom: 8px;
     left: 16px;
 
-    color: var(--color-black);
+    color: var(--color-light);
     z-index: 0;
 }
 
 .register-container .form-group label i {
-    color: var(--color-black);
+    color: var(--color-light);
     width: 30px;
 }
 
@@ -54,14 +55,14 @@
     padding: 8px 48px;
 
     border: 0;
-    border-bottom: 1px solid var(--color-black);
+    border-bottom: 1px solid var(--color-light);
 
     background: transparent;
 
     position: relative;
     z-index: 1;
 
-    color: var(--color-black);
+    color: var(--color-light);
 
     font-size: 16px;
 }
@@ -76,10 +77,10 @@
 
     margin-top: 8px;
 
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-light);
     background: transparent;
 
-    color: var(--color-black);
+    color: var(--color-light);
 
     font-size: 16px;
     padding: 8px 24px 8px 8px;
@@ -94,14 +95,14 @@
 }
 
 .register-container .form-group #submit:hover {
-    background: var(--color-black);
-    color: var(--color-white);
+    background: var(--color-light);
+    color: var(--color-black);
 
     transition: .15s ease-out;
 }
 
 .register-container .form-group #submit:hover > i {
-    color: var(--color-white);
+    color: var(--color-black);
     transition: .15s ease-out;
 }
 
@@ -130,10 +131,10 @@
 
     margin-top: 8px;
 
-    border: 1px solid var(--color-black);
+    border: 1px solid var(--color-light);
     background: transparent;
 
-    color: var(--color-black);
+    color: var(--color-light);
 
     font-size: 16px;
     padding: 8px 24px 8px 8px;
@@ -148,7 +149,7 @@
 }
 
 .register-container .alerts button:hover {
-    background: var(--color-black);
+    background: var(--color-light);
     color: var(--color-white);
 
     transition: .15s ease-out;
