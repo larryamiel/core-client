@@ -5,14 +5,16 @@
     padding: 14px 20px;
 
     position: relative;
-    top: 65%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
 
     animation-name: fade-from-left;
     animation-duration: .5s;
 
     background-color: rgba(255, 255, 255, .65);
+
+    text-align: center;
 }
 
 .login-container .form-group {
@@ -20,6 +22,7 @@
     margin-bottom: 16px;
 
     position: relative;
+    text-align: left;
 }
 
 .login-container .form-group label {
@@ -98,4 +101,18 @@
 
 .login-container .form-group #submit:hover > i {
     color: var(--color-white);
+}
+
+.login-container .alerts {
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.login-container .alerts p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 24px;
+
+    color: var(--color-red);
 }

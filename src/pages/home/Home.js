@@ -7,6 +7,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 
 function Home(props) {
+    const [user, setUser] = useState({});
     const [state, setState] = useState('home');
 
     const changeState = (nState) => {
@@ -15,9 +16,9 @@ function Home(props) {
 
     return (
         <>
-            <Helmet>
+            {/* <Helmet>
                 <title>Core | Welcome to Core</title>
-            </Helmet>
+            </Helmet> */}
 
             <div className="page home">
                 {
@@ -32,8 +33,18 @@ function Home(props) {
 
                 <div className={'home-navigation ' + (state !== 'home' ? 'active' : '')}>
                     <span onClick={event => changeState('home')} title="Home"><i className="fas fa-home" /></span>
-                    <span onClick={event => changeState('login')} title="Log In"><i className="fas fa-sign-in-alt" /></span>
-                    <span onClick={event => changeState('register')} title="Register"><i className="fas fa-user-plus" /></span>
+                    {
+                        ! user.username ?
+                        <>
+                            <span onClick={event => changeState('login')} title="Login"><i className="fas fa-sign-in-alt" /></span>
+                            <span onClick={event => changeState('register')} title="Register"><i className="fas fa-user-plus" /></span>
+                        </>
+                        :
+                        <>
+                            <span title="Dashboard"><i className="fas fa-chart-line" /></span>
+                            <span title="Logout"><i className="fas fa-sign-out-alt" /></span>
+                        </>
+                    }
                 </div>
 
                 {
